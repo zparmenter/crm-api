@@ -1,0 +1,23 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "crm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zparmenter/crm-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zparmenter/crm-api/issues"
+  },
+  "homepage": "https://github.com/zparmenter/crm-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
