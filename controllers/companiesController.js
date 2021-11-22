@@ -37,8 +37,51 @@ const show = (req, res) => {
     });
 };
 
+//create 
+const create = (req,res) => {
+    db.Company.create(req.body, (error,savedCompany) => {
+        if (error) {
+            console.log('Error in Company create:', error)
+        }
+
+        res.status(201).json({ company: savedCompany })
+    })
+}
+
+//update 
+const update = (req, res) => {
+    db.Company.findByIdAndUpdate(req.params.id, {new: true}, (error, updatedCompany) => {
+        if (error) {
+            console.log('error in companies')
+
+            return res.send('incomplete companies')
+        }
+
+        res.status(200).json({
+            updatedCompany
+        })
+    })
+}
+
+//delete 
+const destroy = (req, res) => {
+    db.Company.findByIdAndDelete(req.params.id, (error, deletedCompany) => {
+        if (error) {
+            console.log('Error in companies destroy:', error)
+            return res.send('incomplete company delete controller function')
+        }
+
+        res.status(200).json({
+            deletedCompany
+        })
+    })
+}
+
 
 module.exports = {
     index,
     show,
+    create,
+    update,
+    destroy,
 };
