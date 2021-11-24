@@ -35,10 +35,10 @@ const AuditSchema = new Schema({
     phoneNumber: {
         type: Number,
     },
-    Address: {
+    address: {
         type: String,
     },
-    Website: {
+    website: {
         type: String,
     }
 })
