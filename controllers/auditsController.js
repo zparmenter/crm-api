@@ -12,6 +12,10 @@ const index = (req, res) => {
                 message: 'No Audits found in DB.'
             })
         }
+
+        res.status(200).json({
+            audits: foundAudits 
+        })
     })
 }
 

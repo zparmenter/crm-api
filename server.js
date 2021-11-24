@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 
 //middleware -- API routes
 app.use('/api/v1/companies', routes.companies);
+app.use('/api/v1/audits', routes.audits);
 
 
 // app.get('/', function(req, res) {
