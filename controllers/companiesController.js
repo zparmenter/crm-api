@@ -24,12 +24,12 @@ const show = (req, res) => {
             console.log('Error in Companies show:', error)
         
 
-        if(!foundCompany) return res.json({
-            message: 'There is no company with this ID in db'
-        })
+            if(!foundCompany) return res.json({
+                message: 'There is no company with this ID in db'
+            })
 
-        return res.send('Incomplete company show controller function');
-    }
+            return res.send('Incomplete company show controller function');
+        }
 
         res.status(200).json({
             company: foundCompany
