@@ -50,9 +50,9 @@ const create = (req,res) => {
 
 //update 
 const update = (req, res) => {
-    db.Company.findByIdAndUpdate(req.params.id, {new: true}, (error, updatedCompany) => {
+    db.Company.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedCompany) => {
         if (error) {
-            console.log('error in companies')
+            console.log('error in companies', error);
 
             return res.send('incomplete companies')
         }

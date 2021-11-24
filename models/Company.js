@@ -23,10 +23,7 @@ const CompanySchema = new Schema({
     logo: {
         type: String,
         require: [true, 'Logo image must be provided.'],
-    },
-    images: [{
-        img: String,
-    }],
+    }
 });
 
 const Company = mongoose.model('Company', CompanySchema);
