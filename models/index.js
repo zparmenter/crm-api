@@ -8,4 +8,5 @@ mongoose.connect(connectionString)
 
 module.exports = {
     Company: require('./Company'),
+    Audit: require('./Audit'),
 }
