@@ -14,9 +14,9 @@ const index = (req, res) => {
         }
 
         res.status(200).json({
-            audits: foundAudits 
+            audits: foundAudits
         })
-    })
+    }).populate('company')
 }
 
 //show
@@ -35,9 +35,9 @@ const show = (req, res) => {
 
         res.status(200).json({
             audit: foundAudit
-        });
-    });
-};
+        })
+    }).populate('company')
+}
 
 //create
 const create = (req, res) => {
@@ -66,7 +66,7 @@ const update = (req, res) => {
 }
 
 //delete
-//currently won't be a function, but want to have it available
+//currently won't be a CRUD operation, but want to have it available
 //for if we want to add it in later. we want tickets/audits to remain
 //forever so there's a record of it. It should only be deleted if
 //the company is deleted
