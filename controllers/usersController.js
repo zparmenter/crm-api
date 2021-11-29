@@ -30,13 +30,13 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const foundUser = await db.User.findOne({ email: req.body.email }).select(
-        "+password"
+            "+password"
         );
 
         if (!foundUser) {
-        return res
-            .status(400)
-            .json({ status: 400, message: "Username or password is incorrect" });
+            return res
+                .status(400)
+                .json({ status: 400, message: "Username or password is incorrect" });
         }
 
         const isMatch = await bcrypt.compare(req.body.password, foundUser.password);
@@ -44,12 +44,12 @@ const login = async (req, res) => {
         if (isMatch) {
         //TODO create a json web token and send response
         // .sign(payload,secretkey,options)
-        const signedJwt = await jwt.sign(
-            { _id: foundUser._id },
-            "supersecretwaffels",
-            {
-            expiresIn: "1h",
-            }
+            const signedJwt = await jwt.sign(
+                { _id: foundUser._id },
+                "supersecretwaffels",
+                {
+                expiresIn: "1h",
+                }
         );
         res.status(200).json({
             status: 200,
@@ -58,15 +58,15 @@ const login = async (req, res) => {
         });
         } else {
         // the password provided does not match the password on file.
-        return res.status(400).json({
-            status: 400,
-            message: "Username or password is incorrect",
+            return res.status(400).json({
+                status: 400,
+                message: "Username or password is incorrect",
         });
         }
     } catch (error) {
         return res.status(500).json({
-        status: 500,
-        message: "Something went wrong. Please try again",
+            status: 500,
+            message: "Something went wrong. Please try again",
         });
     }
 };
@@ -78,8 +78,8 @@ const profile = async (req, res) => {
         res.json({ headers: req.headers, user: foundUser });
     } catch (error) {
         return res.status(500).json({
-        status: 500,
-        message: "Something went wrong. Please try again",
+            status: 500,
+            message: "Something went wrong. Please try again",
         });
     }
 };

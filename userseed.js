@@ -10,7 +10,7 @@ db.User.deleteMany({}, (err, result) => {
     console.log(result.deletedCount,'users deleted');
   
     // Create
-    db.User.create(userData.users, (err, seededUsers) => {
+    db.User.create(data.users, (err, seededUsers) => {
       if (err) {
         console.log(err);
         process.exit();
