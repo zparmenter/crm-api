@@ -16,8 +16,9 @@ const UserSchema = new Schema({
     password: { 
         type: String,
         required: true, 
-        select: false },
-    });
+        select: false, 
+    },
+});
 
 UserSchema.set("toJSON", {
     transform: (doc, ret, opt) => {

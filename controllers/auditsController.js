@@ -43,7 +43,7 @@ const show = (req, res) => {
 const create = (req, res) => {
     db.Audit.create(req.body, (error, savedAudit) => {
         if(error) {
-            conosle.log('Error in Audit create:', error)
+            console.log('Error in Audit create:', error)
         }
 
         res.status(201).json({ audit: savedAudit })
