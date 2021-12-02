@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
 const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
 const app = express();
 
 
@@ -20,9 +21,9 @@ app.use((req, res, next) => {
 });
 
 //middleware -- API routes
-app.use('/api/v1/companies', routes.companies);
-app.use('/api/v1/audits', routes.audits);
-app.use('/api/v1/', routes.users);
+app.use(`${MONGODB_URI}/api/v1/companies`, routes.companies);
+app.use(`${MONGODB_URI}/api/v1/audits`, routes.audits);
+app.use(`${MONGODB_URI}/api/v1/`, routes.users);
 
 
 // app.get('/', function(req, res) {
