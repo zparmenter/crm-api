@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb://localhost:27017/crmdb';
+const connectionString = process.env.MONGODB_URI;
 
 mongoose.connect(connectionString)
     .then(() => console.log('MongoDB connected successfully!!!'))

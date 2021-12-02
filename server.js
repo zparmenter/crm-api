@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const routes = require('./routes');
 const cors = require('cors');
-
+const PORT = process.env.PORT;
 const app = express();
 
 
@@ -28,6 +29,6 @@ app.use('/api/v1/', routes.users);
 //     res.send('Hello World');
 // });
 
-app.listen(4000, function() {
-    console.log('Server is live on port 4000');
+app.listen(PORT, function() {
+    console.log(`Server is live on port ${PORT}`);
 });
