@@ -1,0 +1,25 @@
+{
+    "companies": [
+        {
+            "companyName": "Leaf Mowing",
+            "companyContact": "Zach",
+            "email": "leafmowing@gmail.com",
+            "phoneNumber": 1234567890,
+            "logo": "https://www.leafmowing.com/LeafMowingLogo-07.png"
+        },
+        {
+            "companyName" : "Leaf Social Media",
+            "companyContact": "Zach",
+            "email": "leafsocialmedia@gmail.com",
+            "phoneNumber": 1234567890,
+            "logo": "https://www.leafsocialmedia.com/leafsocialmedia_logo.png"
+        },
+        {
+            "companyName": "FoundBrow",
+            "companyContact": "Zach",
+            "email": "foundbrow@gmail.com",
+            "phoneNumber": 1234567890,
+            "logo": "http://www.foundbrow.com/Soc_Logo.jpg"
+        }
+    ]
+}
